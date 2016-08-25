@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rake', '> 0.8.7')
   s.add_development_dependency('rspec', '~> 3.0')
   s.add_development_dependency('rdoc')
+  s.add_development_dependency('pry')
 
   s.files = %w(README.md MIT-LICENSE CONTRIBUTING.md CHANGELOG.rdoc Dependencies.txt Gemfile Rakefile TODO.rdoc) + Dir.glob("lib/**/*")
 end

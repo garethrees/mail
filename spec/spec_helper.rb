@@ -1,6 +1,7 @@
 # encoding: utf-8
 # frozen_string_literal: true
 require File.expand_path('../environment', __FILE__)
+require 'pry'
 
 unless defined?(MAIL_ROOT)
   STDERR.puts("Running Specs under Ruby Version #{RUBY_VERSION}")

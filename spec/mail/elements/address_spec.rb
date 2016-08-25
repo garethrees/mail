@@ -617,6 +617,19 @@ describe Mail::Address do
         expect(Mail::Address.new(nil).group).to eq(nil)
       end
 
+      it 'should handle |"Mikel \" Lindsaar" <test@lindsaar.net>|' do
+        address = Mail::Address.new('"Mikel \" Lindsaar" <test@lindsaar.net>')
+        expect(address).to break_down_to({
+                                         :name         => 'Mikel " Lindsaar',
+                                         :display_name => 'Mikel " Lindsaar',
+                                         :address      => 'test@lindsaar.net',
+                                         :comments     => nil,
+                                         :domain       => 'lindsaar.net',
+                                         :local        => 'test',
+                                         :format       => '"Mikel \" Lindsaar" <test@lindsaar.net>',
+                                         :raw          => '"Mikel \" Lindsaar" <test@lindsaar.net>'})
+      end
+
     end
 
   end
